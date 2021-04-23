@@ -43,3 +43,4 @@ m = 8; %kg
 J_r = m*R^2/2; %kg/m^2
 %Approximate wheel with reductor moment of inertia
 J = 0.0019; %kg/m^2
+KD = [-cos(-pi/6), cos(pi/2), -cos(-5*pi/6); -sin(-pi/6), -sin(pi/2), -sin(-5*pi/6); R, R, R];

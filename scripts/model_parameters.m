@@ -30,17 +30,17 @@ B_d = eye(4)/A_eq * (F - eye(4)) * B;
 %Radius of omni-wheel
 r = 40e-3; %m
 %Radius of Robotino
-R = 135e-3; %m
-delta_1 = -pi/6;
-delta_2 = -3*pi/2;
-delta_3 = -5*pi/6;
-M = [-cos(delta_1), -sin(delta_1), R;
-     -cos(delta_2), -sin(delta_2), R;
-     -cos(delta_3), -sin(delta_3), R];
-%Weight of Robotino
+R = 125e-3; %m
+delta_1 = pi/3;
+delta_2 = pi;
+delta_3 = 5*pi/3;
+M = [-sin(delta_1), cos(delta_1), R;
+     -sin(delta_2), cos(delta_2), R;
+     -sin(delta_3), cos(delta_3), R];
+%Approximate weight of Robotino
 m = 8; %kg
 %Approximate Robotino moment of inertia
 J_r = m*R^2/2; %kg/m^2
 %Approximate wheel with reductor moment of inertia
 J = 0.0019; %kg/m^2
-KD = [-cos(-pi/6), cos(pi/2), -cos(-5*pi/6); -sin(-pi/6), -sin(pi/2), -sin(-5*pi/6); R, R, R];
+KD = [-sin(pi/3), -sin(pi), -sin(5*pi/3); cos(pi/3), cos(pi), cos(5*pi/3); R, R, R];

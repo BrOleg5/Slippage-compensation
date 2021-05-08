@@ -1,4 +1,4 @@
-load('..\data\compare_square_trajectories.mat');
+load('square_trajectories.mat');
 side_ind_without_slippage_comp = [1, 216; 217, 285; 286, 502; 503, 744];
 side_ind_with_slippage_comp = [1, 268; 269, 359; 360, 604; 605, 1017];
 side_ind_with_slippage_characteristic = [1, 324; 325, 422; 423, 636; 637, 1039];

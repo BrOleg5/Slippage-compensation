@@ -60,7 +60,7 @@ for j = 1:3
 %     plot(I, slippage_mdl(I, linear_slippage_models(j, :), 0.4),...
 %         'Color', 'green', 'LineWidth', 2);
     ylim([0, 1]);
-    xlabel("Ток, а");
+    xlabel("Ток, А");
     ylabel("Коэффициент проскальзывания");
     legend('Тип 1', 'Тип 2', 'Тип 3', 'Модель');
 end

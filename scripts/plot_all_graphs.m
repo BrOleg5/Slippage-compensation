@@ -1,6 +1,6 @@
 %% Загрузка данных
 run('model_parameters.m');
-run('get_data_and_calculated_torque.m');
+run('load_and_preprocess_data.m');
 %% Цветные графики зависимости коэффициента проскальзывания от тока двигателя
 window_name = ["Slippage coefficient vs current motor 1",...
     "Slippage coefficient vs current motor 2", "Slippage coefficient vs current motor 3"];

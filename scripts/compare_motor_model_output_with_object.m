@@ -1,6 +1,7 @@
 %% Подгодовка данных и запуск моделирования
 load('Robotino_data.mat');
 model_name = 'Motor_model_with_Matlab_interface';
+open_system(model_name);
 n = length(motor1_reference.time);
 disturbance_torque = timeseries(M_dist*ones(n,1), motor1_reference.time);
 set_param(model_name, 'StopTime', num2str(motor1_reference.time(end)));
@@ -28,10 +29,11 @@ figure('Name', 'Current');
 plot(motor1_current);
 grid on;
 hold on;
-plot(current, 'LineWidth', 1);
+plot(current, 'LineWidth', 2);
 xlabel('Время, с');
 ylabel('Ток, А');
 legend(leg);
 xlim(lim_x_axis);
 %% Чистка данных
+close_system(model_name);
 clear model_name n disturbance_torque simOut speed current leg

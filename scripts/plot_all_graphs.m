@@ -62,11 +62,11 @@ for j = 1:3
     ylim([0, 1]);
     xlabel("Ток, А");
     ylabel("Коэффициент проскальзывания");
-    legend('Тип 1', 'Тип 2', 'Тип 3', 'Модель');
+    legend('Тип 1', 'Тип 2', 'Тип 3');
 end
 %% Черно-белый графики зависимости коэффициента проскальзывания от тока двигателя
 markers = 'x.+';
-marker_sizes = [5, 5, 4];
+marker_sizes = [4, 5, 3];
 for j = 1:3
     figure('Name', window_name(j));
     grid on;
@@ -79,9 +79,9 @@ for j = 1:3
 %     plot(I, slippage_mdl(I, linear_slippage_models(j, :), 0.4),...
 %         'Color', 'black', 'LineWidth', 2);
     ylim([0, 1]);
-    xlabel("Current, A");
-    ylabel("Slippage coefficient");
-    legend('Type 3', 'Type 2', 'Type 1', 'Model');
+    xlabel("Ток, А");
+    ylabel("Коэффициент проскальзывания");
+    legend('Тип 1', 'Тип 2', 'Тип 3');
 end
 %% Цветные графики зависимости коэффициента проскальзывания от момента двигателя
 window_name = ["Slippage coefficient vs torque motor 1",...
@@ -119,13 +119,23 @@ for j = 1:3
         plot(s(i).motor(j).torque, s(i).motor(j).slippage, 'LineStyle', 'none', 'Marker', markers(i), ...
         'MarkerSize', marker_sizes(i), 'MarkerFaceColor', 'black', 'MarkerEdgeColor', 'black');
     end
+    if j == 1
+        b1 = slippage_vs_torque_motor_1(:, 1)\slippage_vs_torque_motor_1(:, 2);
+        plot([0, 0.5], b1*[0, 0.5], 'LineStyle', ':', 'Color', 'black', 'LineWidth', 2);
+        I = 0:0.01:0.5;
+        plot(I, slippage_vs_torque_quadratic_rsvm_model_motor_1.predictFcn(I'), ...
+             'Color', 'black', 'LineWidth', 2);
+    end
 %     h = plot(slippage_vs_torque_models{j});
 %     set(h, 'Color',  'black', 'LineWidth',2);
 %     xlim([0, 0.5]);
     ylim([0, 1]);
-    xlabel("Torque, Nm");
-    ylabel("Slippage coefficient");
-    legend('Type 3', 'Type 2', 'Type 1', 'Model');
+    xlabel("Момент, Нм");
+    ylabel("Коэффициент проскальзывания");
+    legend('Тип 1', 'Тип 2', 'Тип 3', 'Модель');
+    if j == 1
+        legend('Тип 1', 'Тип 2', 'Тип 3', 'Модель 1-го порядка', 'Модель 2-го порядка');
+    end
 end
 %% Удаление данных из работчей области
 clear;

@@ -48,7 +48,7 @@ for i = 1:3
         s(i).motor(j).torque = s(i).motor(j).power ./ (s(i).motor(j).speed * 2*pi/60);
     end
 end
-%% Строим графики
+%% Строим цветные графики
 colors = ["black", "blue", "red"];
 text = ["Movement across X-axis.", "Movement across Y-axis.", "Movement around Z-axis.", "Movement across XY-axis."];
 for i = 1:3
@@ -73,6 +73,39 @@ for i = 1:3
                     plot(s(l).motor(i).current(~ref_set{k}), s(l).motor(i).slippage(~ref_set{k}),...
                         'LineStyle', 'none', 'Marker', '.', 'MarkerSize', 5, ...
                         'MarkerFaceColor', colors(l), 'MarkerEdgeColor', colors(l));
+%                 else
+%                     plot(s(l).motor(i).current, s(l).motor(i).slippage,...
+%                         'LineStyle', 'none', 'Marker', '.', 'MarkerSize', 5, ...
+%                         'MarkerFaceColor', colors(l), 'MarkerEdgeColor', colors(l));
+                end
+            end
+        end
+    end
+end
+%% Строим черно-белые графики
+text = ["Movement across X-axis.", "Movement across Y-axis.", "Movement around Z-axis.", "Movement across XY-axis."];
+for i = 1:3
+    for j = 1:3
+        X_idx = (s(j).X.reference ~= 0) & (s(j).Y.reference == 0) & (s(j).Angle.reference == 0);
+        Y_idx = (s(j).X.reference == 0) & (s(j).Y.reference ~= 0) & (s(j).Angle.reference == 0);
+        Ang_idx = (s(j).X.reference == 0) & (s(j).Y.reference == 0) & (s(j).Angle.reference ~= 0);
+        XY_idx = (s(j).X.reference ~= 0) & (s(j).Y.reference ~= 0) & (s(j).Angle.reference == 0);
+        ref_set = {X_idx, Y_idx, Ang_idx, XY_idx};
+        for k = 1:4
+            figure('Name', strcat(text(k), " Motor ", num2str(i)));
+            grid on;
+            hold on;
+            xlabel('Ток, А');
+            ylabel('Коэффициент проскальзывания');
+            ylim([0, 1]);
+            for l = 1:3
+                if (l == j)
+                    plot(s(l).motor(i).current(ref_set{k}), s(l).motor(i).slippage(ref_set{k}),...
+                        'LineStyle', 'none', 'Marker', 'x', 'MarkerSize', 5, ...
+                        'MarkerFaceColor', 'black', 'MarkerEdgeColor', 'black');
+                    plot(s(l).motor(i).current(~ref_set{k}), s(l).motor(i).slippage(~ref_set{k}),...
+                        'LineStyle', 'none', 'Marker', '.', 'MarkerSize', 5, ...
+                        'MarkerFaceColor', 'black', 'MarkerEdgeColor', 'black');
 %                 else
 %                     plot(s(l).motor(i).current, s(l).motor(i).slippage,...
 %                         'LineStyle', 'none', 'Marker', '.', 'MarkerSize', 5, ...

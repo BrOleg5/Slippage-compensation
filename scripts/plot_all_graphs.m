@@ -29,18 +29,18 @@ for j = 1:3
     plot(dwf.motor(j).current, dwf.motor(j).slippage, 'LineStyle', 'none', 'Marker', '.', ...
     'MarkerSize', 5, 'MarkerFaceColor', 'black', 'MarkerEdgeColor', 'black');
     grid on;
-    hold on;
-    if (j == 1)
-        xLimits = get(gca,'XLim');
-        I = [0, xLimits(2)];
-        plot(I, slippage_vs_current_model_motor_1.predictFcn(I'),...
-             'Color', 'black', 'LineWidth', 2);
-    end
+%     hold on;
+%     if (j == 1)
+%         xLimits = get(gca,'XLim');
+%         I = [0, xLimits(2)];
+%         plot(I, slippage_vs_current_model_motor_1.predictFcn(I'),...
+%              'Color', 'black', 'LineWidth', 2);
+%     end
     ylim([0, 1]);
     xlim([0, 2]);
-    xlabel("Current, A");
-    ylabel("Slippage coefficient");
-    legend('Experimental data', 'Model');
+    xlabel("Ток, А");
+    ylabel("Коэффициент проскальзывания");
+%     legend('Экспериментальные данные', 'Модель');
 end
 %% Цветные графики зависимости коэффициента проскальзывания от тока двигателя
 window_name = ["Slippage coefficient vs current motor 1",...

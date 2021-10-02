@@ -10,16 +10,16 @@ The test site represents a set of surfaces of various shapes and sizes. Each sur
 
 | Type 1 | Type 2 | Type 3 |
 |--------|--------|--------|
-|![](/../<readme-images>/red_surface.jpg)|![](/../<readme-images>/blue_surface.jpg)|![](/../<readme-images>/green_surface.jpg)|
+|![](/../readme-images/red_surface.jpg)|![](/../readme-images/blue_surface.jpg)|![](/../readme-images/green_surface.jpg)|
 | Surface with low traversabitity, with immersion | Surface with medium traversabitity, without immersion | Surface with high traversabitity, without immersion
 
 Festo Robotino v2 is used as a mobile platform. It has omni-wheels, encoders, and motor current sensors. Aruco marker is placed on the top side of Robotino to define the robot’s location via a computer vision system that is located above the test site.
 
 Top view of the test site:
-![](/../<readme-images>/robotino.jpg)
+![](/../readme-images/robotino.jpg)
 
 Festo Robotino v2 with Aruco marker:
-![](/../<readme-images>/.jpg)
+![](/../readme-images/test_site.jpg)
 
 ## References
 

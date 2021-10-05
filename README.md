@@ -15,10 +15,10 @@ The test site represents a set of surfaces of various shapes and sizes. Each sur
 
 Festo Robotino v2 is used as a mobile platform. It has omni-wheels, encoders, and motor current sensors. Aruco marker is placed on the top side of Robotino to define the robot’s location via a computer vision system that is located above the test site.
 
-Top view of the test site:
+Festo Robotino v2 with Aruco marker:
 ![](/../readme-images/robotino.jpg)
 
-Festo Robotino v2 with Aruco marker:
+Top view of the test site:
 ![](/../readme-images/test_site.jpg)
 
 ## References

@@ -34,6 +34,21 @@ xlabel('Время, с');
 ylabel('Ток, А');
 legend(leg);
 xlim(lim_x_axis);
+%% Calculate RMSE
+max_time_error = 0;
+exp_data = [];
+model_data = [];
+n = length(motor1_output.data);
+for i = 1:n
+    dt = abs(speed.time - motor1_output.time(i));
+    [min_dt, isClose] = min(dt);
+    exp_data = [exp_data; motor1_output.data(i)];
+    model_data = [model_data; speed.data(isClose)];
+    if(min_dt > max_time_error)
+        max_time_error = min_dt;
+    end
+end
+rmse = sqrt(sum((exp_data - model_data).^2)/n);
 %% Чистка данных
 close_system(model_name);
-clear model_name n disturbance_torque simOut speed current leg
+%clear model_name n disturbance_torque simOut speed current leg

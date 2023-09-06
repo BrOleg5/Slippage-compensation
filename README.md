@@ -1,4 +1,4 @@
-# Slippage detection and compensation system of mobile robot's wheel 
+# Slippage detection and compensation system of mobile robot's wheel
 
 Research of wheel slippage and development of slippage detection and compensation system of mobile robot's wheel.
 
@@ -23,6 +23,21 @@ Festo Robotino v2 with Aruco marker:
 Top view of the test site:
 ![](/../readme-images/test_site.jpg)
 
-## References
+## Citation
 
-L. Ojeda, D. Cruz, G. Reina and J. Borenstein, "[Current-Based Slippage Detection and Odometry Correction for Mobile Robots and Planetary Rovers](https://ieeexplore.ieee.org/abstract/document/1618745)," in IEEE Transactions on Robotics, vol. 22, no. 2, pp. 366-378, April 2006, doi: 10.1109/TRO.2005.862480.
+```
+@article{Belyaev2021,
+    title = {Slip Detection and Compensation System for Mobile Robot in Heterogeneous Environment},
+    journal = {IFAC-PapersOnLine},
+    volume = {54},
+    number = {13},
+    pages = {339-344},
+    year = {2021},
+    note = {20th IFAC Conference on Technology, Culture, and International Stability TECIS 2021},
+    issn = {2405-8963},
+    doi = {https://doi.org/10.1016/j.ifacol.2021.10.470},
+    url = {https://www.sciencedirect.com/science/article/pii/S2405896321019078},
+    author = {A.S. Belyaev and O.A. Brylev and E.A. Ivanov},
+    keywords = {Mobile robot, control system, terrain, slip detection, different environments},
+}
+```

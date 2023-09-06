@@ -4,6 +4,8 @@ Research of wheel slippage and development of slippage detection and compensatio
 
 The repository contains [experimental data](data), [Simulink models](models), and [Matlab scripts](scripts), which were used in research and development.
 
+Continuation of the project at the [link](https://github.com/BrOleg5/research-wheel-slippage).
+
 ## Test site and mobile robot
 
 The test site represents a set of surfaces of various shapes and sizes. Each surface consists of two layers: internal and external. The internal one is responsible for the immersion effect and is of 2 types: hard ‐ without immersion and soft ‐ with immersion. The external layer differs in relief and color.
